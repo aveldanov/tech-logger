@@ -15,59 +15,45 @@ const AddTechModal = () => {
     } else {
       console.log(firstName, lastName);
       // Clear fields
-      setMessage('');
-      setTech('');
-      setAttention(false)
+      setFirstName('');
+      setLastName('');
     }
 
 
   }
 
   return (
-    <div id='add-log-modal' className="modal" style={modalStyle}>
+    <div id='add-tech-modal' className="modal">
       <div className="modal-content">
-        <h4>Enter System Log</h4>
+        <h4>New Technician </h4>
         <div className="row">
           <div className="input-field">
             <input
               type="text"
-              name="message"
-              value={message}
-              onChange={e => setMessage(e.target.value)} />
-            <label htmlFor="message" className="active">
-              Log Message
+              name="firstName"
+              value={firstName}
+              onChange={e => setFirstName(e.target.value)} />
+            <label htmlFor="firstName" className="active">
+              First Name
             </label>
           </div>
         </div>
+
         <div className="row">
           <div className="input-field">
-            <select
-              name="tech"
-              value={tech} className="browser-default"
-              onChange={e => setTech(e.target.value)}
-            >
-              <option value="" disabled>Select Technician</option>
-              <option value="John Doe">John Doe</option>
-              <option value="Sam Doe">Sam Doe</option>
-              <option value="Name3">Name3</option>
-            </select>
+            <input
+              type="text"
+              name="lastName"
+              value={lastName}
+              onChange={e => setLastName(e.target.value)} />
+            <label htmlFor="lastName" className="active">
+              First Name
+            </label>
           </div>
         </div>
-        <div className="ro">
-          <div className="input-">
-            <p>
-              <label >
-                <input
-                  type="checkbox" className="filled-in"
-                  checked={attention}
-                  value={attention}
-                  onChange={e => setAttention(!attention)}
-                />
-                <span>Needs Attention</span>
-              </label>
-            </p>
-          </div>
-        </div>
+
+
+
       </div>
       <div className="modal-footer">
         <a href="#!" onClick={onSubmit} className="modal-close waves-effect waves-green blue btn">Enter</a>
@@ -77,8 +63,4 @@ const AddTechModal = () => {
 }
 
 
-const modalStyle = {
-  width: '75%',
-  height: '75%'
-}
 export default AddTechModal;

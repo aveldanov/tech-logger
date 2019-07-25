@@ -54,7 +54,7 @@ const AddLogModal = () => {
             </select>
           </div>
         </div>
-        <div className="ro">
+        <div className="row">
           <div className="input-">
             <p>
               <label >

@@ -20,8 +20,6 @@ const EditLogModal = () => {
       setTech('');
       setAttention(false)
     }
-
-
   }
 
   return (
