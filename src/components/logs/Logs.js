@@ -50,13 +50,18 @@ const Logs = ({ log: { logs, loading }, getLogs }) => {
 }
 
 Logs.propTypes = {
-  log: PropTypes.object.isRequired
+  log: PropTypes.object.isRequired,
+  getLogs: PropTypes.func.isRequired
 }
 
 
 const mapStateToProps = state => ({
   log: state.log
-})
+});
+
+const mapDispatchToProps = dispatch => ({
+  getLogs: () => dispatch(getLogs())
+});
 
 
-export default connect(mapStateToProps, { getLogs })(Logs);
+export default connect(mapStateToProps, mapDispatchToProps)(Logs);
