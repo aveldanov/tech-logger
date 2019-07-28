@@ -9,6 +9,13 @@ const SearchBar = ({ searchLogs }) => {
   const text = useRef('');
 
 
+
+  const onChange = (e) => {
+    console.log(text.current);
+    searchLogs(text.current.value)
+  }
+
+
   return (
     <nav style={{ marginBottom: '30px' }} className="blue">
       <div className="nav-wrapper">
@@ -18,6 +25,8 @@ const SearchBar = ({ searchLogs }) => {
               id="search"
               type="search"
               placeholder='Search logs...'
+              ref={text}
+              onChange={onChange}
             />
             <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
             <i className="material-icons">close</i>
